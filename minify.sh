@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 # Minify images using TinyPNG
 
-API_KEY=`cat api.key`
+API_KEY=`cat "$(dirname $0)"/api.key`
 API_URL=https://api.tinify.com/shrink
 
 # directory to save minified files
