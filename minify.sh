@@ -76,6 +76,10 @@ minify_image() {
     local url=`echo "$response" | sed 's#.*"url":"\([^"]*\)".*#\1#'`
     if [[ -n "$output_dir" ]]; then
       local output_path="$output_dir$file"
+      local dir=`dirname $output_path`
+      if [[ ! -d "$dir" ]]; then
+        mkdir -p "$dir"
+      fi
     else
       local output_path=$file
     fi
